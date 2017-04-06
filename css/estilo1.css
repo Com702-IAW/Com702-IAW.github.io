@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-abr-2017, 9:49:31
+    Author     : User
+*/
+footer {
+    background-color: #3f8797; 
+    color: white;
+    width: 100%;
+    font-family: 'Lato', sans-serif;    
+}
+
+.monitor {
+    
+}
+
+.teclado {
+    
+}
+
+.mouse {
+    
+}
+
+.parlantes {
+    
+}
+
+.thumbnail{
+    width:600px;
+    height:600px;
+}
