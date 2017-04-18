@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var jsonComponentes,jsonCarrito;
+var jsonComponentes, jsonCarrito;
 
 $(function () {
     var arreglo = ordenarComponentes();
@@ -22,31 +22,37 @@ function ordenarComponentes() {
             objeto.id = index;      //para ubicar en primer arreglo en json
             objeto.id2 = index1;    //para ubicar en segund arreglo en json (dentro de tipo de componente)
             objeto.id3 = cont;      //para ubicar en el arreglo nuevo creado con todos los componentes
-    //        objeto.pedido = false;
+            //        objeto.pedido = false;
             arreglo[cont] = objeto;
-            ++cont;            
+            ++cont;
         }
     }
-     return arreglo;    
+    return arreglo;
 }
 
 function actualizarPedido(componente) {
     jsonCarrito[componente.id] = componente;
-    $("#imagen"+componente.id).attr("src",componente.imagen);
+    $("#imagen" + componente.id).attr("src", componente.imagen);
     computarTotal();
 }
 
-function computarTotal(){
-    var total,index;
+function computarTotal() {
+    var total, index, cant;
     total = 0;
-    
-    for (index = 0; index < jsonCarrito.length; ++index){
+    cant = 0;
+
+    for (index = 0; index < jsonCarrito.length; ++index) {
         var lala2 = jsonCarrito[index];
-        if (lala2 !== null)
+        if (lala2 !== null){
             total = total + lala2.precio;
+            ++cant;
+        }
     }
-    
-    $("#preciototal").text("El precio total es: $"+total);
+
+    $("#preciototal").text("El precio total es: $" + total);
+    $("#carrito").text("Items: "+cant);
+
+
 }
 
 
