@@ -18,8 +18,8 @@ footer {
     
 }
 
-.teclado {
-    
+#teclado, #monitor,#parlantes, #mouse {
+     background-color: #e4b9c0
 }
 
 .mouse {
