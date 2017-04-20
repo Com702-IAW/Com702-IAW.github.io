@@ -10,11 +10,7 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Estilo Propio -->
-        <link href="css/estilo1.css" rel="stylesheet">
-        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="js/modeloComponentes.js"></script>
-        <script type="text/javascript" src="js/vistaComponentes.js"></script>
-        <script type="text/javascript" src="js/controlador.js"></script>
+        <link href="css/estilo1.css" rel="stylesheet" id="linkestilo">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -23,62 +19,36 @@
         <![endif]-->
     </head>
     <body>
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Brand</a>
-                    </div>
-
+        <div class="container-fluid panel-arriba">
+            <nav class="navbar navbar-default barra-arriba">
+                <img class="pull-left" src ="src/logo.png"/>
+                <div class="container-fluid" >
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Link</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                     
                         <ul class="nav navbar-nav navbar-right">
-                            <li> 
-                                <img src ="src/carrito.png"/>
-                                <a id="carrito" href="#">Items: 0 </a>
+                            <li>                               
+                                <img src ="src/carrito.png" alt="Imagen Carro de Compas"/>
+                                <h1 class="texto-fuerte" id="carrito">Items: 0 </h1>
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
+        </div>
+        <div class="container">
             <div class="row well">
 
                 <!-- Lugar donde va la imagen que describe el producto -->
                 <div class="col-md-7 col-xs-12">
-                    <a class="thumbnail" id="panelgeneral">
-                        <img id="imagen0"/>
-                        <img id="imagen1"/>
-                        <img id="imagen2"/>
-                        <img id="imagen3"/>
+                    <a class="thumbnail col-xs-12" id="panelgeneral">
+                        <div>
+                            <img id="imagen0" alt="Imagen Monitor"/>
+                            <img id="imagen3" alt="Imagen Parlantes"/>
+                        </div>
+                        <div>
+                            <img id="imagen1" alt="Imagen Teclado"/>
+                            <img id="imagen2" alt="Imagen Mouse"/>
+                        </div>
                         <div id = "preciototal"></div>
                     </a>
                 </div>
@@ -132,11 +102,11 @@
                         <hr />
                         <div class="content">
                             <p>
-                                San Francisco, CA 94101<br />
-                                1987 Lincoln Street<br />
-                                Phone: +0 000 000 00 00<br />
-                                Fax: +0 000 000 00 00<br />
-                                Email: admin@mysite.com
+                                Bahía Blanca, CP 8000<br />
+                                Av. Alem 1253<br />
+                                Phone: +54 702 101924<br />
+                                Fax: +54 702 103003<br />
+                                Email: com702@iaw2017.com
                             </p>
                         </div>
                     </div>
@@ -149,18 +119,33 @@
                         <div class="content">
                             <p>
                                 Get in toach with us:
+                                <a class="texto-link" href ="http://cs.uns.edu.ar/~dcm/iaw/">http://cs.uns.edu.ar/~dcm/iaw/ </a>
                             </p>
+                            <p>
+                                <a href="https://www.facebook.com/manuel.rios.374"><img src="src/facebook.png" alt="Logo Facebook" /></a>
+                                Manuel Rios           
+                            </p>
+                            <p>
+                                <a href="https://www.facebook.com/Constanza.morillo"><img src="src/facebook.png" alt="Logo Facebook" /></a>
+                                Constanza Morillo          
+                            </p>
+                            
                         </div>
                     </div>
                     <!-- Subscibe -->
                     <div class="col-md-4 col-xs-12">
                         <div class="headline">
-                            <h3>SUBSCRIBE</h3>
+                            <h3>CAMBIA TU ESTILO</h3>
                         </div>
                         <hr />
                         <div class="content">
                             <p>
-                                Subscribe here:
+                                <a class="texto-link" href="#" id="estilo1" >Estilo 1 </a>
+                                
+                            </p>
+                            <p>
+                                <a class="texto-link" href="#" id="estilo2" >Estilo 2 </a>
+                                
                             </p>
                         </div>
                     </div>
@@ -170,6 +155,10 @@
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="js/modeloComponentes.js"></script>
+        <script type="text/javascript" src="js/vistaComponentes.js"></script>
+        <script type="text/javascript" src="js/controlador.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
     </body>

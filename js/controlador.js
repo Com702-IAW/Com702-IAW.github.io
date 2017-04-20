@@ -10,6 +10,18 @@ $(function () {
     mostrar(arreglo);
 });
 
+$(document).ready(function(){
+   $("#estilo1").click(function(evento){
+      $("#linkestilo").attr("href","css/estilo2.css");
+   });
+});
+
+$(document).ready(function(){
+   $("#estilo2").click(function(evento){
+      $("#linkestilo").attr("href","css/estilo1.css");
+   });
+});
+
 function ordenarComponentes() {
     var index, index1, cont;
     cont = 0;

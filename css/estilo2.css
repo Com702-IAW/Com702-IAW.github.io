@@ -4,26 +4,26 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 06-abr-2017, 9:49:31
+    Created on : 06-abr-2017, 8:39:02
     Author     : User
 */
 footer {
-    background-color: #3f8797; 
+    background-color: #161e2c; 
     color: white;
     width: 100%;
-    font-family: 'Lato', sans-serif;    
+    font-family: Georgia, Cambria, Times, "Times New Roman";    
 }
 
 .panel-arriba{
-    background-color: #3f8797;
+    background-color: #161e2c;
 }
 
 .barra-arriba{
-    background-color: #41aac1;
+    background-color: #b23c54;
 }
 
 .texto-fuerte{
-    color: black;
+    color: whitesmoke;
     font-size: 20px;
     font-weight: bold;
 }
@@ -33,23 +33,19 @@ footer {
 }
 
 button{
-    background-color: #3498DB;
-    color: white;
-    border-radius: 5px;
-    margin: 10px 5px;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    margin-left: 5px;
+    background: #b23c54;
+    box-shadow: 0px 5px 0px 0px #6d2433;
+    border-radius: 100px;
 }
 
 #teclado, #monitor,#parlantes, #mouse {
-     background-color: #3f8797;
+     background-color: #b23c54;
      border-color: black;
      border-style: solid;
-     font-family: 'Lato', sans-serif;
-     color: white;
-     border-width: 2px;
+     font-family: Georgia, Cambria, Times, "Times New Roman";
+     color: #1b301e;
+     border-width: 1px;
+     border-radius: 15px;
 }
 
 /*Monitor*/
