@@ -5,21 +5,31 @@
  */
 var jsonComponentes, jsonCarrito;
 
+//ver de usar canvas - > pdf
+//hacer botom reset, borrar fotos y vaciar jsonCarrito
+//collapse, buscar propiedad de que este uno solo abierto
+
 $(function () {
+    var estilo = localStorage.getItem("Estilo");
+    if (estilo !== null)
+        $("#linkestilo").attr("href", estilo);
+    mostrarAnterior();
     var arreglo = ordenarComponentes();
     mostrar(arreglo);
 });
 
-$(document).ready(function(){
-   $("#estilo1").click(function(evento){
-      $("#linkestilo").attr("href","css/estilo2.css");
-   });
+$(document).ready(function () {
+    $("#estilo1").click(function () {
+        $("#linkestilo").attr("href", "css/estilo2.css");
+        localStorage.setItem("Estilo", "css/estilo2.css");
+    });
 });
 
-$(document).ready(function(){
-   $("#estilo2").click(function(evento){
-      $("#linkestilo").attr("href","css/estilo1.css");
-   });
+$(document).ready(function () {
+    $("#estilo2").click(function () {
+        $("#linkestilo").attr("href", "css/estilo1.css");
+        localStorage.setItem("Estilo", "css/estilo1.css");
+    });
 });
 
 function ordenarComponentes() {
@@ -45,7 +55,9 @@ function ordenarComponentes() {
 function actualizarPedido(componente) {
     jsonCarrito[componente.id] = componente;
     $("#imagen" + componente.id).attr("src", componente.imagen);
-    computarTotal();
+    var total = computarTotal();
+	$("#preciototal").text("El precio total es: $" + total);
+
 }
 
 function computarTotal() {
@@ -55,16 +67,32 @@ function computarTotal() {
 
     for (index = 0; index < jsonCarrito.length; ++index) {
         var lala2 = jsonCarrito[index];
-        if (lala2 !== null){
+        if (lala2 !== null) {
             total = total + lala2.precio;
             ++cant;
         }
-    }
+    }	
+	$("#carrito").text("Items: " + cant);
 
-    $("#preciototal").text("El precio total es: $" + total);
-    $("#carrito").text("Items: "+cant);
-
-
+	return total;
 }
 
+function mostrarAnterior() {
+    var carritoAnterior = localStorage.getItem("PedidoAnterior");
+    if (carritoAnterior !== null) {
+        var index,cant;
+		cant = 0;
+        var obj = JSON.parse(carritoAnterior);
+        for (index = 0; index < obj.length; ++index) {
+            var objeto = obj[index];
+            if (objeto !== null){
+				$("#imagen" + index).attr("src", objeto.imagen);
+				++cant;
+			}
+        }
+		$("#carrito").text("Items: " + cant);
+		$("#preciototal").text("El precio total es: $" + computarTotal());
+
+    }
+}
 

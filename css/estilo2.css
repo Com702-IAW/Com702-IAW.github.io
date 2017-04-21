@@ -38,14 +38,13 @@ button{
     border-radius: 100px;
 }
 
-#teclado, #monitor,#parlantes, #mouse {
+#componente0, #componente1,#componente2, #componente3 {
      background-color: #b23c54;
      border-color: black;
      border-style: solid;
      font-family: Georgia, Cambria, Times, "Times New Roman";
      color: #1b301e;
      border-width: 1px;
-     border-radius: 15px;
 }
 
 /*Monitor*/
