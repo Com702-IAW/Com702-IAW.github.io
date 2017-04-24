@@ -73,6 +73,7 @@ function computarTotal() {
         }
     }	
 	$("#carrito").text("Items: " + cant);
+	localStorage.setItem("PedidoAnterior",JSON.stringify(jsonCarrito));
 
 	return total;
 }
@@ -80,18 +81,20 @@ function computarTotal() {
 function mostrarAnterior() {
     var carritoAnterior = localStorage.getItem("PedidoAnterior");
     if (carritoAnterior !== null) {
-        var index,cant;
+        var index,cant,precio;
 		cant = 0;
+		precio = 0;
         var obj = JSON.parse(carritoAnterior);
         for (index = 0; index < obj.length; ++index) {
             var objeto = obj[index];
             if (objeto !== null){
 				$("#imagen" + index).attr("src", objeto.imagen);
 				++cant;
+				precio+=objeto.precio;
 			}
         }
 		$("#carrito").text("Items: " + cant);
-		$("#preciototal").text("El precio total es: $" + computarTotal());
+		$("#preciototal").text("El precio total es: $" + precio);
 
     }
 }
