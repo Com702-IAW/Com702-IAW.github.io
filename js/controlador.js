@@ -88,6 +88,7 @@ function mostrarAnterior() {
         for (index = 0; index < obj.length; ++index) {
             var objeto = obj[index];
             if (objeto !== null){
+				jsonCarrito[index] = objeto;
 				$("#imagen" + index).attr("src", objeto.imagen);
 				++cant;
 				precio+=objeto.precio;
@@ -98,4 +99,5 @@ function mostrarAnterior() {
 
     }
 }
+
 
