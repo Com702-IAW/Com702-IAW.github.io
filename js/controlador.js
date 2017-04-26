@@ -25,6 +25,23 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function(){
+	$("#resetear").click(function (){
+		localStorage.setItem("PedidoAnterior",null);
+		var index;
+		for(index = 0; index<jsonCarrito.length; ++index)
+		{	jsonCarrito[index] = null;
+			$("#imagen"+index).attr("src","");
+		}
+		$("#preciototal").text("");
+		$("#imagen0").attr("src","src/pregunta.png");
+		$("#imagen1").attr("src","src/pregunta1.png");
+		$("#imagen2").attr("src","src/pregunta1.png");
+		$("#imagen3").attr("src","src/pregunta1.png");
+		$("#carrito").text("Items: 0");
+	})
+});
+
 $(document).ready(function () {
     $("#estilo2").click(function () {
         $("#linkestilo").attr("href", "css/estilo1.css");
@@ -85,7 +102,8 @@ function mostrarAnterior() {
 		cant = 0;
 		precio = 0;
         var obj = JSON.parse(carritoAnterior);
-        for (index = 0; index < obj.length; ++index) {
+		if (obj !== null){
+			for (index = 0; index < obj.length; ++index) {
             var objeto = obj[index];
             if (objeto !== null){
 				jsonCarrito[index] = objeto;
@@ -97,6 +115,8 @@ function mostrarAnterior() {
 		$("#carrito").text("Items: " + cant);
 		$("#preciototal").text("El precio total es: $" + precio);
 
+		}
+        
     }
 }
 
